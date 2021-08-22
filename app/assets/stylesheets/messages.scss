@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.message {
+.message, form {
     width: 300px;
     margin: auto;
+    margin-bottom: 20px;
 }

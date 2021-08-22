@@ -1,3 +1,17 @@
+<%= form_with model: @message do |form| %>
+    <div>
+        <%= form.text_field :content %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+
+    <% @message.errors.full_messages_for(:content).each do |error| %>
+        <div><%= error %></div>
+    <% end %>
+<% end %>
+
 <% @messages.each do |message| %>
     <div class="message">
         <div class="date">
