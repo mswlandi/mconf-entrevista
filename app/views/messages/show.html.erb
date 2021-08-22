@@ -7,8 +7,10 @@
         <%= form.submit %>
     </div>
 
-    <% @message.errors.full_messages_for(:content).each do |error| %>
-        <div><%= error %></div>
+    <% flash.each do |type, msg| %>
+        <div>
+            <%= msg %>
+        </div>
     <% end %>
 <% end %>
 

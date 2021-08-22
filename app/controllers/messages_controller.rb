@@ -7,12 +7,15 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
 
-    if @message.save
-      redirect_to messages_path
-    else
-      flash[:error] = "Something went wrong"
-      render :new
+    unless @message.save
+      if @message[:content].empty?
+        error_msg = "Write something!"
+      else
+        error_msg = @message.errors.full_messages[0]
+      end
     end
+
+    redirect_to messages_path, alert: error_msg
   end
 
   private
