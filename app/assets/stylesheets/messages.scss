@@ -16,6 +16,8 @@ $blue-text: #fff;
 $input-border-hover: #b5b5b5;
 $input-text: #363636;
 
+$error-color: #f14668;
+
 body {
     padding: 20px 30px 0 30px;
     margin: 0;
@@ -28,17 +30,28 @@ body {
 }
 
 form {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .message {
     margin-bottom: 10px;
 }
 
-// Message Input and "Send" Button
+// Encapsulates Message Input, "Send" Button and Error message
 .input-line {
     height: 45px;
     display: flex;
+    position: relative;
+}
+
+// Error Messsage
+.error {
+    display: none;
+    color: $error-color;
+    position: absolute;
+    top: 47px;
+    left: 5px;
+    font-size: 16px;
 }
 
 // Message Input
@@ -82,6 +95,8 @@ input[type="submit"] {
 
     background-color: $blue-background;
     color: $blue-text;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 input[type="submit"]:hover {
