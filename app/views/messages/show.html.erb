@@ -16,7 +16,7 @@
             <span class="content-date"><%= message.created_at.in_time_zone("Brasilia").strftime("%d/%m/%y") %></span>
         </div>
         <div class="content">
-            <%= message.content %>
+            <%= auto_link message.content %>
         </div>
     </div>
 <% end %>
