@@ -4,14 +4,18 @@ This is a rails application that follows the description of Mconf's interview co
 
 ## Building
 
-`git clone https://github.com/mswlandi/mconf-entrevista.git`
+This app uses the version 2.7.4 of Ruby.
 
-set ruby version to 2.7.4
+After running
 
-`bundle install`
+```sh
+bundle install
 
-`rake db:create`
-`rake db:migrate`
+rake db:create
+rake db:migrate
 
-`yarn add @rails/webpacker`
-`bundle update webpacker`
+yarn add @rails/webpacker
+bundle update webpacker
+```
+
+Everything should be good to go.
