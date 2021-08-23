@@ -12,8 +12,9 @@ formSubmit.onclick = (event) => {
     if (inputText.value.trim() == '') {
         event.preventDefault();
         Array.from(errorTags).forEach((errorTag) => {
-            errorTag.style.display = "block";
+            errorTag.style.opacity = 1;
         });
+        inputText.classList.add("invalid");
     }
 }
 
@@ -34,11 +35,15 @@ inputText.oninput = () => {
     }
 
     // If the input is not empty, remove empty error message
-    errorTags = document.getElementsByClassName("error");
+    if (inputText.value.trim() != '') {
+        errorTags = document.getElementsByClassName("error");
+        
+        Array.from(errorTags).forEach((errorTag) => {
+            errorTag.style.opacity = 0;
+        });
     
-    Array.from(errorTags).forEach((errorTag) => {
-        errorTag.style.display = "none";
-    });
+        inputText.classList.remove("invalid");
+    }
 };
 
 // Stylize occurences of "Mconf" in the messages
