@@ -22,3 +22,11 @@ message.innerHTML = message.innerHTML.replace(/Mconf/g, mconfString.replace("ran
 // Deletes the old input
 inputText = document.getElementById("message_content");
 inputText.value = "";
+
+// IF there's an error, shows it under the input
+if ("<%= @error_msg %>" != "") {
+    errorTag = document.getElementById("error");
+    errorTag.innerHTML = "<%= @error_msg %>";
+    errorTag.style.opacity = 1;
+    inputText.classList.add("invalid");
+}

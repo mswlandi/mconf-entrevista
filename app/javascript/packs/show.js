@@ -5,16 +5,26 @@ inputText = document.getElementById("message_content");
 
 backgroundIsColored = false;
 
+// Toggle error, if there's an error, colors the input's border red and shows error message below
+function setError(thereIsError, message) {
+    errorTag = document.getElementById("error");
+
+    if (thereIsError) {
+        errorTag.innerHTML = message;
+        errorTag.style.opacity = 1;
+        inputText.classList.add("invalid");
+    }
+    else {
+        errorTag.style.opacity = 0;
+        inputText.classList.remove("invalid");
+    }
+}
+
 // Client-side form validation
 formSubmit.onclick = (event) => {
-    errorTags = document.getElementsByClassName("error");
-
     if (inputText.value.trim() == '') {
         event.preventDefault();
-        Array.from(errorTags).forEach((errorTag) => {
-            errorTag.style.opacity = 1;
-        });
-        inputText.classList.add("invalid");
+        setError(true, "Write something!");
     }
 }
 
@@ -34,15 +44,9 @@ inputText.oninput = () => {
         body.style.background = 'white';
     }
 
-    // If the input is not empty, remove empty error message
+    // If the input is not empty, remove error message
     if (inputText.value.trim() != '') {
-        errorTags = document.getElementsByClassName("error");
-        
-        Array.from(errorTags).forEach((errorTag) => {
-            errorTag.style.opacity = 0;
-        });
-    
-        inputText.classList.remove("invalid");
+        setError(false);
     }
 };
 
