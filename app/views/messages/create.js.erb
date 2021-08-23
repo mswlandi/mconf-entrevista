@@ -23,7 +23,11 @@ message.innerHTML = message.innerHTML.replace(/Mconf/g, mconfString.replace("ran
 inputText = document.getElementById("message_content");
 inputText.value = "";
 
-// IF there's an error, shows it under the input
+// Makes sure the background is white
+body = document.getElementsByTagName("body")[0];
+body.style.background = 'white';
+
+// If there's an error, shows it under the input
 if ("<%= @error_msg %>" != "") {
     errorTag = document.getElementById("error");
     errorTag.innerHTML = "<%= @error_msg %>";
