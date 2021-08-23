@@ -1,10 +1,7 @@
 <%= form_with model: @message do |form| %>
-    <div>
+    <div class="input-line">
         <%= form.text_field :content %>
-    </div>
-
-    <div>
-        <%= form.submit %>
+        <%= form.submit "Send" %>
     </div>
 
     <% flash.each do |type, msg| %>
@@ -17,8 +14,8 @@
 <% @messages.each do |message| %>
     <div class="message">
         <div class="date">
-            <%= message.created_at %>
-        <div>
+            <span class="content-date"><%= message.created_at.strftime("%d/%m/%y") %></span>
+        </div>
         <div class="content">
             <%= message.content %>
         </div>
