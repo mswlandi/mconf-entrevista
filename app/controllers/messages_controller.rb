@@ -14,8 +14,6 @@ class MessagesController < ApplicationController
         error_msg = @message.errors.full_messages[0]
       end
     end
-
-    redirect_to messages_path, alert: error_msg
   end
 
   private

@@ -1,0 +1,24 @@
+
+// Adds the new message in the HTML
+document.getElementsByClassName('messages-container')[0].innerHTML += (`
+    <div class="message">
+        <div class="date">
+            <span class="content-date"><%= @message.created_at.in_time_zone("Brasilia").strftime("%d/%m/%y") %></span>
+        </div>
+        <div class="content">
+            <%= auto_link @message.content %>
+        </div>
+    </div>
+`)
+
+// Stylizes the new message's "Mconf"s
+message = Array.from(document.getElementsByClassName("content")).pop();
+
+mconfString = '<span style="color: randomColor">Mconf</span>'
+randomColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+
+message.innerHTML = message.innerHTML.replace(/Mconf/g, mconfString.replace("randomColor", randomColor));
+
+// Deletes the old input
+inputText = document.getElementById("message_content");
+inputText.value = "";
