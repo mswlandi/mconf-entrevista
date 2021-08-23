@@ -1,24 +1,17 @@
-# README
+# Ruby on Rails Coding Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails application that follows the description of Mconf's interview coding activity.
 
-Things you may want to cover:
+## Building
 
-* Ruby version
+`git clone https://github.com/mswlandi/mconf-entrevista.git`
 
-* System dependencies
+set ruby version to 2.7.4
 
-* Configuration
+`bundle install`
 
-* Database creation
+`rake db:create`
+`rake db:migrate`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`yarn add @rails/webpacker`
+`bundle update webpacker`
