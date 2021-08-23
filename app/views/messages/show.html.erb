@@ -2,7 +2,7 @@
     <div class="input-line">
         <%= form.text_field :content %>
         <%= form.submit "SEND" %>
-        
+
         <div class="error">Write something!</div>
         <% flash.each do |type, msg| %>
             <div class="error"><%= msg %></div>
@@ -13,7 +13,7 @@
 <% @messages.each do |message| %>
     <div class="message">
         <div class="date">
-            <span class="content-date"><%= message.created_at.strftime("%d/%m/%y") %></span>
+            <span class="content-date"><%= message.created_at.in_time_zone("Brasilia").strftime("%d/%m/%y") %></span>
         </div>
         <div class="content">
             <%= message.content %>
