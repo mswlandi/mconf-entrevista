@@ -2,13 +2,12 @@
 
 This is a rails application that follows the description of Mconf's interview coding activity.
 
-## Building
+## Installing and Running
 
-This app uses the version 2.7.4 of Ruby.
-
-After running
+After installing the version 2.7.4 of Ruby and the dependencies `sqlite3`, `nodejs` and `yarn`, run:
 
 ```sh
+gem install bundler
 bundle install
 
 rake db:create
@@ -18,4 +17,4 @@ yarn add @rails/webpacker
 bundle update webpacker
 ```
 
-Everything should be good to go.
+and you should be good to go.
